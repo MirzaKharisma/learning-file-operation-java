@@ -41,9 +41,9 @@ public class LearnIOFile {
         FileInputStream fis = new FileInputStream(fileOs);
 
         // Cara 1
-        String result = "";
+        StringBuilder result = new StringBuilder();
         for(int c: fis.readAllBytes()){
-            result += (char) c;
+            result.append((char) c);
         }
         System.out.println(result);
 
@@ -104,12 +104,12 @@ public class LearnIOFile {
     static void readBufferedReader() throws IOException {
         System.out.println("BUFFER READER STREAM");
         BufferedReader br = new BufferedReader(new FileReader(buffWR));
-//        StringBuilder result = new StringBuilder();
-//        while(br.ready()){
-//            result.append((char) br.read());
-//        }
-//        System.out.println(result);
-        System.out.println(br.readLine());
+        StringBuilder result = new StringBuilder();
+        while(br.ready()){
+            result.append((char) br.read());
+        }
+        System.out.println(result);
+        System.out.println(br.readLine());//hasilnya null karena sudah ada result sebelumnya
         System.out.println(br.readLine());
         br.close();
     }
