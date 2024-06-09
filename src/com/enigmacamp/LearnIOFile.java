@@ -82,9 +82,9 @@ public class LearnIOFile {
     static void fileReader() throws IOException {
         System.out.println("FILE READER STREAM");
         FileReader fr = new FileReader(fileWr);
-        String result = "";
+        StringBuilder result = new StringBuilder();
         while(fr.ready()){
-            result += (char) fr.read();
+            result.append((char) fr.read());
         }
         System.out.println(result);
         fr.close();
