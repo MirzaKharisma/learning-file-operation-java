@@ -9,10 +9,6 @@ public class LearnIOFile {
     public static void main(String[] args) {
         System.out.println("Learn IO File");
         try{
-            writeFileOutputStream();
-            readFileInputStream();
-            fileWriter();
-            fileReader();
             writeBufferedWriter();
             readBufferedReader();
         }catch (IOException e){
@@ -93,10 +89,11 @@ public class LearnIOFile {
     static void writeBufferedWriter() throws IOException {
         System.out.println("BUFFER WRITER STREAM");
         BufferedWriter bw = new BufferedWriter(new FileWriter(buffWR, false));
-        bw.write("Mirza");
-        bw.newLine();
-        bw.write("Saya adalah manusia");
-        bw.newLine();
+        bw.write("Kharisma");
+        bw.write('\n');
+        bw.write("Andika Kangen band");
+        bw.append('\n');
+        bw.append("Aditira");
         bw.close();
         System.out.println("BufferedWriter: " + buffWR.length());
     }
